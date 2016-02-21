@@ -1,0 +1,15 @@
+#ifndef config_hpp_included
+#define config_hpp_included
+
+#pragma once
+
+#include <cstdint>
+
+namespace tlv
+{
+
+typedef @TAG_TYPE@ tag_t;
+
+}
+
+#endif // config_hpp_included
