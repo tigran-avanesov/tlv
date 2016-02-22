@@ -6,7 +6,7 @@ TEST(tlv, stream_empty)
 {
     tlv::stream stream;
 
-    ASSERT_EQ(0, stream.size());
+    ASSERT_EQ(0U, stream.size());
     ASSERT_EQ(nullptr, stream.data());
 }
 //-----------------------------------------------------------------------------
@@ -17,7 +17,7 @@ TEST(tlv, stream_empty_after_reset)
     stream.write_uint16(500);
     stream.reset();
 
-    ASSERT_EQ(0, stream.size());
+    ASSERT_EQ(0U, stream.size());
     ASSERT_EQ(nullptr, stream.data());
 }
 //-----------------------------------------------------------------------------
@@ -40,7 +40,7 @@ TEST(tlv, stream_add_uint16)
 {
     uint8_t expected[] = {0xF4, 0x01};
     tlv::stream stream;
-    stream.write_uint16(500);
+    stream.write_uint16(500U);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
@@ -54,7 +54,7 @@ TEST(tlv, stream_add_uint32)
 {
     uint8_t expected[] = {0xFF, 0x00, 0xFF, 0x00};
     tlv::stream stream;
-    stream.write_uint32(0x00FF00FF);
+    stream.write_uint32(0x00FF00FFU);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
@@ -68,7 +68,7 @@ TEST(tlv, stream_add_uint64)
 {
     uint8_t expected[] = {0xFF, 0x00, 0xFF, 0x00, 0xFF, 0x00, 0xFF, 0x00};
     tlv::stream stream;
-    stream.write_uint64(0x00FF00FF00FF00FF);
+    stream.write_uint64(0x00FF00FF00FF00FFU);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 

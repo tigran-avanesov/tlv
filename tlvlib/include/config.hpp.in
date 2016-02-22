@@ -8,13 +8,13 @@
 namespace tlv
 {
 
-typedef @TAG_TYPE@ tag_t;
-
-struct endianness
+struct config
 {
-    static constexpr int le = 0;
-    static constexpr int be = 1;
-    static constexpr int current_cpu = @CPU_IS_BIGENDIAN@;
+    // type definitions section
+    typedef @TAG_TYPE@ tag_t;
+
+    // constants section
+    static constexpr unsigned int cpu_endianness = @CPU_IS_BIGENDIAN@;
 };
 
 }

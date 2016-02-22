@@ -1,5 +1,7 @@
 #include <cstring>
 #include "stream.hpp"
+#include "endianness.hpp"
+#include "config.hpp"
 
 //-----------------------------------------------------------------------------
 tlv::stream::stream()
@@ -14,16 +16,19 @@ void tlv::stream::write_uint8(uint8_t v)
 //-----------------------------------------------------------------------------
 void tlv::stream::write_uint16(uint16_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_uint16(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------
 void tlv::stream::write_uint32(uint32_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_uint32(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------
 void tlv::stream::write_uint64(uint64_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_uint64(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------
@@ -34,16 +39,19 @@ void tlv::stream::write_int8(int8_t v)
 //-----------------------------------------------------------------------------
 void tlv::stream::write_int16(int16_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_int16(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------
 void tlv::stream::write_int32(int32_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_int32(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------
 void tlv::stream::write_int64(int64_t v)
 {
+    v = to_little_endian<config::cpu_endianness>::convert_int64(v);
     return write_data(&v, sizeof(v));
 }
 //-----------------------------------------------------------------------------

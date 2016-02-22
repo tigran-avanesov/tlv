@@ -8,7 +8,7 @@ TEST(tlv, encoder_empty)
     tlv::stream stream;
     tlv::encoder e(stream);
 
-    ASSERT_EQ(0, stream.size());
+    ASSERT_EQ(0U, stream.size());
     ASSERT_EQ(nullptr, stream.data());
 }
 //-----------------------------------------------------------------------------
@@ -19,7 +19,7 @@ TEST(tlv, encoder_empty_after_reset)
     e.encode<uint8_t>(1, 1);
     e.reset();
 
-    ASSERT_EQ(0, stream.size());
+    ASSERT_EQ(0U, stream.size());
     ASSERT_EQ(nullptr, stream.data());
 }
 //-----------------------------------------------------------------------------
@@ -49,7 +49,7 @@ TEST(tlv, encoder_encode_uint16)
     };
 
     tlv::stream stream;
-    tlv::encoder(stream).encode<uint16_t>(2, 0x00FF);
+    tlv::encoder(stream).encode<uint16_t>(2, 0x00FFU);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
@@ -67,7 +67,7 @@ TEST(tlv, encoder_encode_uint32)
     };
 
     tlv::stream stream;
-    tlv::encoder(stream).encode<uint32_t>(3, 0xFFFFFFFF);
+    tlv::encoder(stream).encode<uint32_t>(3, 0xFFFFFFFFU);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
@@ -85,7 +85,7 @@ TEST(tlv, encoder_encode_uint64)
     };
 
     tlv::stream stream;
-    tlv::encoder(stream).encode<uint64_t>(4, 0xFFFFFFFF);
+    tlv::encoder(stream).encode<uint64_t>(4, 0xFFFFFFFFU);
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
@@ -118,9 +118,9 @@ TEST(tlv, encoder_encode_vector_of_int)
     typedef std::vector<uint16_t> short_vector;
 
     short_vector vec;
-    vec.push_back(1);
-    vec.push_back(2);
-    vec.push_back(3);
+    vec.push_back(1U);
+    vec.push_back(2U);
+    vec.push_back(3U);
 
     uint8_t expected[] =
     {

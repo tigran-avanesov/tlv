@@ -13,12 +13,14 @@ namespace tlv
 class encoder
 {
 public:
+    typedef config::tag_t tag_type;
+public:
     encoder(stream& s);
 
     template <typename T>
-    encoder& encode(tag_t tag, const T& value)
+    encoder& encode(tag_type tag, const T& value)
     {
-        tlv_tag_encoder<tag_t> tag_encoder;
+        tlv_tag_encoder<tag_type> tag_encoder;
         tlv_len_encoder<T> len_encoder;
         tlv_val_encoder<T> val_encoder;
         tag_encoder(stream_, tag);
