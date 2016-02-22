@@ -30,7 +30,7 @@ TEST(tlv, stream_add_uint8)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -44,7 +44,7 @@ TEST(tlv, stream_add_uint16)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -58,7 +58,7 @@ TEST(tlv, stream_add_uint32)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -72,7 +72,7 @@ TEST(tlv, stream_add_uint64)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -86,7 +86,7 @@ TEST(tlv, stream_add_string)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }

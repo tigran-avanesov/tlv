@@ -35,7 +35,7 @@ TEST(tlv, encoder_encode_uint8)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -53,7 +53,7 @@ TEST(tlv, encoder_encode_uint16)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -71,7 +71,7 @@ TEST(tlv, encoder_encode_uint32)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -89,7 +89,7 @@ TEST(tlv, encoder_encode_uint64)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -107,7 +107,7 @@ TEST(tlv, encoder_encode_string)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
@@ -132,7 +132,7 @@ TEST(tlv, encoder_encode_vector_of_int)
 
     ASSERT_EQ(sizeof(expected), stream.size());
 
-    for (int i = 0; i != stream.size(); ++i)
+    for (std::size_t i = 0; i != stream.size(); ++i)
     {
         EXPECT_EQ(expected[i], stream.data()[i]);
     }
