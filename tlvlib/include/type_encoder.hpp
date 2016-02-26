@@ -122,6 +122,36 @@ struct tlv_val_encoder<uint8_t>
     }
 };
 
+/*! Encode 8 bit signed integer value size to the stream */
+template <>
+struct tlv_len_encoder<int8_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to calculate and encode size for
+    */
+    void operator()(tlv::stream& stream, const int8_t& value)
+    {
+        stream.write_uint16(sizeof(value));
+    }
+};
+
+/*! Encode 8 bit signed integer value to the stream */
+template <>
+struct tlv_val_encoder<int8_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to encode
+    */
+    void operator()(tlv::stream& stream, const int8_t& value)
+    {
+        stream.write_int8(value);
+    }
+};
+
 /*! Encode 16 bit unsigned integer value size to the stream */
 template <>
 struct tlv_len_encoder<uint16_t>
@@ -149,6 +179,36 @@ struct tlv_val_encoder<uint16_t>
     void operator()(tlv::stream& stream, const uint16_t& value)
     {
         stream.write_uint16(value);
+    }
+};
+
+/*! Encode 16 bit signed integer value size to the stream */
+template <>
+struct tlv_len_encoder<int16_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to calculate and encode size for
+    */
+    void operator()(tlv::stream& stream, const int16_t& value)
+    {
+        stream.write_uint16(sizeof(value));
+    }
+};
+
+/*! Encode 16 bit signed integer value to the stream */
+template <>
+struct tlv_val_encoder<int16_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to encode
+    */
+    void operator()(tlv::stream& stream, const int16_t& value)
+    {
+        stream.write_int16(value);
     }
 };
 
@@ -182,6 +242,36 @@ struct tlv_val_encoder<uint32_t>
     }
 };
 
+/*! Encode 32 bit signed integer value size to the stream */
+template <>
+struct tlv_len_encoder<int32_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to calculate and encode size for
+    */
+    void operator()(tlv::stream& stream, const int32_t& value)
+    {
+        stream.write_uint16(sizeof(value));
+    }
+};
+
+/*! Encode 32 bit signed integer value to the stream */
+template <>
+struct tlv_val_encoder<int32_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to encode
+    */
+    void operator()(tlv::stream& stream, const int32_t& value)
+    {
+        stream.write_int32(value);
+    }
+};
+
 /*! Encode 64 bit unsigned integer value size to the stream */
 template <>
 struct tlv_len_encoder<uint64_t>
@@ -209,6 +299,36 @@ struct tlv_val_encoder<uint64_t>
     void operator()(tlv::stream& stream, const uint64_t& value)
     {
         stream.write_uint64(value);
+    }
+};
+
+/*! Encode 64 bit signed integer value size to the stream */
+template <>
+struct tlv_len_encoder<int64_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to calculate and encode size for
+    */
+    void operator()(tlv::stream& stream, const int64_t& value)
+    {
+        stream.write_uint16(sizeof(value));
+    }
+};
+
+/*! Encode 64 bit signed integer value to the stream */
+template <>
+struct tlv_val_encoder<int64_t>
+{
+    /*! Encoder function operator implementation */
+    /*!
+        \param stream stream to encode data to
+        \param value value to encode
+    */
+    void operator()(tlv::stream& stream, const int64_t& value)
+    {
+        stream.write_int64(value);
     }
 };
 
