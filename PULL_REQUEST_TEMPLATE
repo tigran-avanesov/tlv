@@ -1,7 +1,10 @@
-*JIRA ticket*
+## JIRA ticket(s):
 https://doorbot.atlassian.net/browse/FWLPD-1344
 
-*What was the issue/requirement:*
+## Description:
+A few sentences describing the overall goals of the pull request's commits.
 
-*How was it fixed/resolved:*
-
+## Related PRs
+branch | PR
+------ | ------
+develop| [link]()
